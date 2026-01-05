@@ -6,15 +6,15 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CreateProjectResponseDto {
+public class ProjectResponseDto {
 
     private Long projectId;
 
     private String name;
 
-    public static CreateProjectResponseDto fromProject(Project project) {
+    public static ProjectResponseDto fromProject(Project project) {
 
-        CreateProjectResponseDto createProjectResponseDto = new CreateProjectResponseDto();
+        ProjectResponseDto createProjectResponseDto = new ProjectResponseDto();
         createProjectResponseDto.setProjectId(project.getId());
         createProjectResponseDto.setName(project.getName());
         return createProjectResponseDto;

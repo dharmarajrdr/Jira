@@ -1,5 +1,6 @@
 package com.dharmaraj.jira.services.interfaces;
 
+import com.dharmaraj.jira.dtos.project.AddMemberInProjectRequestDto;
 import com.dharmaraj.jira.dtos.project.CreateProjectRequestDto;
 import com.dharmaraj.jira.dtos.project.ProjectResponseDto;
 
@@ -10,4 +11,6 @@ public interface ProjectService {
     ProjectResponseDto createProject(CreateProjectRequestDto createProjectDto);
 
     List<ProjectResponseDto> getAllProjects(Long orgId, Long memberId);
+
+    void addMemberIntoProject(AddMemberInProjectRequestDto addMemberInProjectRequestDto);
 }

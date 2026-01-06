@@ -2,15 +2,15 @@ package com.dharmaraj.jira.services.implementations;
 
 import com.dharmaraj.jira.custom_exceptions.MemberNotFoundException;
 import com.dharmaraj.jira.custom_exceptions.PermissionDeniedException;
-import com.dharmaraj.jira.models.Member;
+import com.dharmaraj.jira.models.OrgMember;
 import com.dharmaraj.jira.repositories.MemberRepository;
-import com.dharmaraj.jira.services.interfaces.MemberService;
+import com.dharmaraj.jira.services.interfaces.OrgMemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class MemberServiceImpl implements MemberService {
+public class OrgMemberServiceImpl implements OrgMemberService {
 
     private final MemberRepository memberRepository;
 
@@ -23,7 +23,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public Member getMemberById(Long memberId) {
+    public OrgMember getMemberById(Long memberId) {
 
         return memberRepository.findById(memberId).orElseThrow(() -> new MemberNotFoundException(memberId));
     }

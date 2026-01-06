@@ -13,7 +13,7 @@ class OrgLevelBaseModel extends BaseModel {
 
     @ManyToOne
     @JoinColumn(nullable = false, updatable = false)
-    private Member createdBy;
+    private OrgMember createdBy;
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;

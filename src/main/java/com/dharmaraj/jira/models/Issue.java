@@ -30,6 +30,7 @@ public class Issue extends OrgLevelBaseModel {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private IssueStatus status = ModelsConfig.DEFAULT_STATUS;
+    
     /**
      * If no sprint is assigned, then the issue is considered to be in `Backlog`.
      */

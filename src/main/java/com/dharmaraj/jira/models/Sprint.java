@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Sprint extends OrgLevelBaseModel {
+public class Sprint extends ProjectLevelBaseModel {
 
     @Column(nullable = false)
     private String name;
@@ -22,8 +22,11 @@ public class Sprint extends OrgLevelBaseModel {
     @Column(nullable = false)
     private LocalDate endDate;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    // Project details can be fetched using 'ProjectMember' field
+    /*
+    @ManyToOne
     private Project project;
+     */
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)

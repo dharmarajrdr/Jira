@@ -1,10 +1,10 @@
 package com.dharmaraj.jira.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -14,12 +14,4 @@ class OrgLevelBaseModel extends BaseModel {
     @ManyToOne
     @JoinColumn(nullable = false, updatable = false)
     private OrgMember createdBy;
-
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime createdAt;
-
-    @PrePersist
-    protected void prePersist() {
-        createdAt = LocalDateTime.now();
-    }
 }
